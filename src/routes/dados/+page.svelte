@@ -34,16 +34,16 @@
 	<Button onclick={fetchData}>Gráfico</Button>
 </div>
 
-<div class="flex justify-center">
-	{#if loading}
+{#if loading}
+	<div class="flex flex-col items-center">
 		<img
 			src="/loading.svg"
 			alt="Loading..."
 			width="800"
 		/>
-	{:else if data}
-		<Chart bind:data />
-	{:else}
-		<p class="text-4xl">Selecione uma data</p>
-	{/if}
-</div>
+	</div>
+{:else if data}
+	<Chart bind:data />
+{:else}
+	<p class="text-center text-4xl">Selecione uma data</p>
+{/if}
